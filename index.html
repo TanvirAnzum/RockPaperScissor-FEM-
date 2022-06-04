@@ -14,8 +14,6 @@
 
     <title>Frontend Mentor | Rock, Paper, Scissors</title>
 
-    Score Rules You Picked The House Picked You Win You Lose Play Again
-
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
       .attribution {
@@ -26,23 +24,36 @@
         color: hsl(228, 45%, 44%);
       }
     </style>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <script src="./script.js" defer></script>
   </head>
   <body>
     <main class="main-area">
       <div class="main">
         <div class="main__score">
-          <div class="main__score--title">Rock Paper Scissor</div>
-          <div class="main_score--points">
+          <div class="main__score--title">
+            <img src="./images/logo.svg" alt="logo" />
+          </div>
+          <div class="main__score--points">
             <h4 class="title">SCORE</h4>
             <h1 class="points">12</h1>
           </div>
         </div>
         <div class="main__content">
-          <div class="rock"></div>
-          <span class="user-picked">You Picekd</span>
-          <div class="paper"></div>
-          <span class="house-picked">The House Picekd</span>
-          <div class="scissor"></div>
+          <div class="wrapper">
+            <div class="rock">
+              <img src="./images/icon-rock.svg" alt="rock icon" />
+            </div>
+            <span class="user-picked">You Picekd</span>
+            <div class="paper">
+              <img src="./images/icon-paper.svg" alt="paper icon" />
+            </div>
+            <span class="house-picked">The House Picekd</span>
+            <div class="scissor">
+              <img src="./images/icon-scissors.svg" alt="scissor icon" />
+            </div>
+            <div class="house compute"></div>
+          </div>
         </div>
         <div class="main__verdict">
           <h1 class="verdict-title">YOU LOSE</h1>
@@ -50,6 +61,19 @@
         </div>
         <div class="main__rules">
           <button class="rules">Rules</button>
+          <div class="modal">
+            <h1>RULES</h1>
+            <img
+              src="./images/image-rules.svg"
+              id="img-rules"
+              alt="image containing rules"
+            />
+            <img
+              src="./images/icon-close.svg"
+              id="close-icon"
+              alt="close icon"
+            />
+          </div>
         </div>
       </div>
     </main>

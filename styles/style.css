@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 100%;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+.main-area {
+  height: 100vh;
+  width: 100vw;
+  background: radial-gradient(hsl(214deg, 47%, 23%), hsl(237deg, 49%, 15%));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.main-area .main {
+  height: 90%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main-area .main__score {
+  width: 90%;
+  height: 15%;
+  border: 3px solid hsl(217deg, 16%, 45%);
+  border-radius: 0.3em;
+  display: flex;
+  align-items: center;
+}
+.main-area .main__score--title {
+  width: 40%;
+  margin-inline: auto;
+}
+.main-area .main__score--title img {
+  max-width: 90%;
+}
+.main-area .main__score--points {
+  width: 30%;
+  height: 80%;
+  margin-inline: auto;
+  border-radius: 0.3em;
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.main-area .main__score--points .title {
+  color: hsl(229deg, 64%, 46%);
+}
+.main-area .main__score--points .points {
+  color: hsl(229deg, 25%, 31%);
+  font-size: 3em;
+}
+.main-area .main__content {
+  width: 90%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.main-area .main__content .house-picked,
+.main-area .main__content .user-picked {
+  display: none;
+}
+.main-area .main__content .wrapper {
+  width: 100%;
+  height: 40%;
+  background: url(../images/bg-triangle.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  position: relative;
+}
+.main-area .main__content .rock,
+.main-area .main__content .paper,
+.main-area .main__content .scissor {
+  border: 1em solid;
+  width: 8em;
+  height: 8em;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  border-radius: 50%;
+  border-color: transparent;
+}
+.main-area .main__content .paper {
+  left: 0;
+  top: calc(0% - 4em);
+  background: linear-gradient(white, white) padding-box, linear-gradient(hsl(230deg, 89%, 62%), hsl(230deg, 89%, 65%)) border-box;
+  box-shadow: 0em 0.3em 0em hsl(230deg, 86%, 57%);
+}
+.main-area .main__content .scissor {
+  right: 0;
+  top: calc(0% - 4em);
+  background: linear-gradient(white, white) padding-box, linear-gradient(hsl(39deg, 89%, 49%), hsl(40deg, 84%, 53%)) border-box;
+  box-shadow: 0em 0.3em 0em hsl(39deg, 99%, 35%);
+}
+.main-area .main__content .rock {
+  bottom: 0;
+  left: calc(50% - 4em);
+  background: linear-gradient(white, white) padding-box, linear-gradient(hsl(349deg, 71%, 52%), hsl(349deg, 70%, 56%)) border-box;
+  box-shadow: 0em 0.3em 0em hsl(349deg, 65%, 33%);
+}
+.main-area .main__content .selected {
+  left: 0;
+  top: calc(0% - 4em);
+}
+.main-area .main__content .house {
+  display: none;
+}
+.main-area .main__content .compute {
+  width: 6em;
+  height: 6em;
+  background-color: #1d2d4e;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  border-radius: 50%;
+  border: none;
+  right: 4%;
+  top: calc(0% - 3em);
+}
+.main-area .main__content .cp {
+  left: calc(100% - 8em);
+  right: 0;
+  top: calc(0% - 4em);
+}
+.main-area .main__verdict {
+  display: none;
+}
+.main-area .main__rules button {
+  height: 2.5em;
+  border: 2px solid #e0e5f9;
+  color: #e0e5f9;
+  border-radius: 0.5em;
+  width: 8em;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  line-height: 0;
+  background-color: inherit;
+}
+.main-area .main__rules .modal {
+  width: 100vh;
+  height: 100vh;
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  top: 0;
+  left: 0;
+  background-color: whitesmoke;
+}
+.main-area .main__rules .modal h1 {
+  text-transform: uppercase;
+  color: hsl(229deg, 25%, 31%);
+}/*# sourceMappingURL=style.css.map */
