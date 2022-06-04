@@ -63,10 +63,29 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 .main-area .main__content .house-picked,
 .main-area .main__content .user-picked {
   display: none;
+  font-size: 0.7em;
+  width: 40%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  text-align: center;
+  color: whitesmoke;
+  position: absolute;
+  text-transform: uppercase;
+  line-height: 0;
+  bottom: calc(50% - 0.5em);
+  margin-inline: auto;
+}
+.main-area .main__content .user-picked {
+  left: 0;
+}
+.main-area .main__content .house-picked {
+  right: 0;
 }
 .main-area .main__content .wrapper {
   width: 100%;
@@ -119,7 +138,7 @@
 .main-area .main__content .compute {
   width: 6em;
   height: 6em;
-  background-color: #1d2d4e;
+  background-color: hsl(229deg, 25%, 31%);
   display: none;
   align-items: center;
   justify-content: center;
@@ -134,8 +153,31 @@
   right: 0;
   top: calc(0% - 4em);
 }
-.main-area .main__verdict {
+.main-area .main .verdict {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 30%;
   display: none;
+  text-align: center;
+}
+.main-area .main .verdict .verdict-title {
+  font-size: 3em;
+  color: whitesmoke;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+.main-area .main .verdict .replay {
+  width: 11em;
+  height: 3em;
+  line-height: 1;
+  font-size: 1em;
+  text-transform: uppercase;
+  color: hsl(229deg, 25%, 31%);
+  margin-top: 0.5em;
+  border-radius: 0.5em;
+  border: none;
+  letter-spacing: 0.1em;
 }
 .main-area .main__rules button {
   height: 2.5em;
