@@ -8,6 +8,10 @@
   font-family: "Barlow Semi Condensed", sans-serif;
 }
 
+:root {
+  --hovercolor: green;
+}
+
 $scissor: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
 $paper: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
 $rock: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
@@ -95,6 +99,7 @@ $bg: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
         line-height: 0;
         bottom: calc(50% - 0.5em);
         margin-inline: auto;
+        z-index: 15;
       }
 
       .user-picked {
@@ -128,6 +133,7 @@ $bg: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
         position: absolute;
         border-radius: 50%;
         border-color: transparent;
+        z-index: 20;
       }
 
       .paper {
@@ -153,6 +159,7 @@ $bg: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
       .selected {
         left: 0;
         top: calc(0% - 4em);
+        z-index: 20;
       }
 
       .house {
@@ -170,10 +177,11 @@ $bg: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
         border: none;
         right: 4%;
         top: calc(0% - 3em);
+        z-index: 20;
       }
       .cp {
         left: calc(100% - 8em);
-        right: 0;
+        // right: 0;
         top: calc(0% - 4em);
       }
     }
@@ -185,7 +193,7 @@ $bg: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
       height: 30%;
       display: none;
       text-align: center;
-
+      z-index: 15;
       .verdict-title {
         font-size: 3em;
         color: whitesmoke;
@@ -203,6 +211,9 @@ $bg: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
         border-radius: 0.5em;
         border: none;
         letter-spacing: 0.1em;
+      }
+      .replay:hover {
+        color: var(--hovercolor);
       }
     }
 
@@ -234,6 +245,201 @@ $bg: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
           text-transform: uppercase;
           color: $dark;
         }
+        z-index: 30;
+      }
+    }
+  }
+  .circle-area {
+    position: absolute;
+    min-width: 30em;
+    height: 30em;
+    // border: 1px solid red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .circle-1 {
+      position: absolute;
+      width: 14em;
+      height: 14em;
+      border: none;
+      border-radius: 50%;
+      background-color: none;
+      z-index: 1;
+      // opacity: 0;
+      border: 1em solid rgba(60, 66, 98, 0.5);
+    }
+    .circle-2 {
+      position: absolute;
+      width: 12em;
+      height: 12em;
+      border: none;
+      border-radius: 50%;
+      border: 1em solid rgba(60, 66, 98, 0.3);
+      z-index: 1;
+    }
+    .circle-3 {
+      position: absolute;
+      width: 10em;
+      height: 10em;
+      border: none;
+      border-radius: 50%;
+      border: 1em solid rgba(60, 66, 98, 0.1);
+      z-index: 1;
+    }
+  }
+}
+
+@media all and (min-width: 900px) {
+  .main {
+    max-width: max(60em, 50%);
+    &__score {
+      min-height: 18%;
+
+      &--points {
+        max-width: 15%;
+      }
+    }
+    &__content {
+      max-width: 60%;
+
+      .wrapper {
+        min-height: 50%;
+        // border: 1px solid tomato;
+        .rock,
+        .paper,
+        .scissor {
+          min-width: 9em;
+          min-height: 9em;
+          // border-width: 1.4em;
+        }
+        .paper {
+          left: calc(0% + 4.5em);
+        }
+        .scissor {
+          right: calc(0% + 4.5em);
+        }
+        .rock {
+          left: calc(50% - 4.5em);
+        }
+        .selected {
+          top: calc(50% - 4.5em);
+          left: calc(0% - 4.5em);
+        }
+        .compute {
+          top: calc(50% - 3em);
+          right: calc(0% - 3em);
+        }
+        .cp {
+          top: calc(50% - 4.5em);
+          left: calc(100% - 4.5em);
+          z-index: 15 !important;
+        }
+      }
+      .house-picked,
+      .user-picked {
+        max-width: 8em;
+        font-size: 1.5em !important;
+        top: 0;
+      }
+      .house-picked {
+        right: calc(0% - 4em) !important;
+      }
+      .user-picked {
+        left: calc(0% - 4em) !important;
+      }
+    }
+    &__rules {
+      margin-left: auto;
+      .modal {
+        max-height: 33em;
+        max-width: 24em;
+        left: calc(50% - 12em) !important;
+        top: calc(50% - 17em) !important;
+        border-radius: 1em;
+      }
+    }
+    .verdict {
+      bottom: 35% !important;
+      left: 0%;
+    }
+  }
+  .circle-1 {
+    min-width: 27em;
+    min-height: 27em;
+    border-width: 3em !important;
+  }
+  .circle-2 {
+    min-width: 21em;
+    min-height: 21em;
+    border-width: 3em !important;
+  }
+  .circle-3 {
+    min-width: 15em;
+    min-height: 15em;
+    border-width: 3em !important;
+  }
+}
+
+@media all and (min-width: 800px) and (max-width: 899px) {
+  .main {
+    min-width: 60%;
+    &__score {
+      min-height: 18%;
+
+      &--points {
+        max-width: 15%;
+      }
+    }
+    &__content {
+      min-width: 50%;
+
+      .wrapper {
+        min-height: 50%;
+        // border: 1px solid tomato;
+        .paper {
+          left: calc(0% + 10em);
+        }
+        .scissor {
+          right: calc(0% + 10em);
+        }
+        .rock {
+          left: calc(50% - 4.5em);
+        }
+        .selected {
+          top: calc(50% - 4.5em);
+          left: calc(0% - 4.5em);
+        }
+        .compute {
+          top: calc(50% - 3em);
+          right: calc(0% - 3em);
+        }
+        .cp {
+          top: calc(50% - 4.5em);
+          left: calc(100% - 4.5em);
+          z-index: 15 !important;
+        }
+      }
+      .house-picked,
+      .user-picked {
+        max-width: 8em;
+        font-size: 1.5em !important;
+        top: 0;
+      }
+      .house-picked {
+        right: calc(0% - 4em) !important;
+      }
+      .user-picked {
+        left: calc(0% - 4em) !important;
+      }
+    }
+    &__rules {
+      margin-left: auto;
+      .modal {
+        max-height: 33em;
+        max-width: 24em;
+        left: calc(50% - 12em) !important;
+        top: calc(50% - 17em) !important;
+        border-radius: 1em;
       }
     }
   }

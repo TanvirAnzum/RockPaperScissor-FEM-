@@ -13,6 +13,7 @@ close_btn.addEventListener("click", () => {
 
 //for gameplay visual section
 
+const clr = document.querySelector(":root");
 const rock = document.querySelector(".rock");
 const paper = document.querySelector(".paper");
 const scissor = document.querySelector(".scissor");
@@ -28,6 +29,10 @@ let points = document.querySelector(".points");
 
 points.innerHTML = getScore();
 // console.log(hpicked + upicked);
+
+//global variable for elm
+let player_elm;
+let computer_elm;
 
 ///object for mapping
 
@@ -105,14 +110,20 @@ function element(elm) {
     text.innerHTML = ver;
     verdict.style.display = "block";
     let score;
+    let div = getCircle();
     if (ver == "You Win") {
       score = getScore();
       writeScore(++score);
+      selected.appendChild(div);
+      clr.style.setProperty("--hovercolor", "green");
     } else if (ver == "You Lose") {
       score = getScore();
       writeScore(--score);
+      house.appendChild(div);
+      clr.style.setProperty("--hovercolor", "red");
     } else {
       score = getScore();
+      clr.style.setProperty("--hovercolor", "tomato");
     }
     points.innerHTML = score;
   }, 1500);
@@ -153,4 +164,21 @@ function getScore() {
 function writeScore(value) {
   var score = value;
   localStorage.setItem("score", score);
+}
+
+///circling design
+
+function getCircle() {
+  let div = document.createElement("div");
+  div.classList.add("circle-area");
+  let div1 = document.createElement("div");
+  div1.classList.add("circle-1");
+  let div2 = document.createElement("div");
+  div2.classList.add("circle-2");
+  let div3 = document.createElement("div");
+  div3.classList.add("circle-3");
+  div.appendChild(div1);
+  div.appendChild(div2);
+  div.appendChild(div3);
+  return div;
 }
